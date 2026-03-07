@@ -1,0 +1,80 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/white_stroke"
+            android:backgroundTint="#03A9F4">
+
+            <ImageView
+                android:id="@+id/Iv_custom_productCart"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/white_stroke"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/Iv_delete"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/trash_ic_24"
+                app:layout_constraintEnd_toEndOf="@id/Iv_custom_productCart"
+                app:layout_constraintTop_toTopOf="@id/Iv_custom_productCart" />
+
+            <TextView
+                android:id="@+id/Tv_NameCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Name"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Iv_custom_productCart" />
+
+            <TextView
+                android:id="@+id/Tv_priceCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textColor="#FF5722"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/Tv_NameCart"
+                app:layout_constraintStart_toStartOf="@id/Tv_NameCart" />
+
+            <TextView
+                android:id="@+id/Tv_quantityCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#F44336"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/Tv_priceCart"
+                app:layout_constraintEnd_toEndOf="@+id/Tv_NameCart"
+                app:layout_constraintStart_toStartOf="@+id/Tv_NameCart"
+                app:layout_constraintTop_toBottomOf="@+id/Tv_NameCart" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
