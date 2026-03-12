@@ -138,6 +138,122 @@ public class Database extends SQLiteOpenHelper {
         }
 
     }
+    public void editProduct (Product product , String rowName) {
+        SQLiteDatabase database = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put("name",product.getName());
+        values.put("quantity",product.getQuantity());
+        values.put("price", product.getPrice());
+        values.put("section" , product.getSection());
+
+        long rowId = database.update(tableProduct , values,"name = ?",new String[]{rowName} );
+
+        if(rowId == -1){
+            Toast.makeText(context, "Filed to update product", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(context, "update Success", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public Product getProductByName(String inputName){
+        SQLiteDatabase database = getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM " + tableProduct + " WHERE  TRIM(name) = '"+inputName.trim()+"'" ,null);
+
+
+        while (cursor.moveToNext()){
+            String name = cursor.getString(1);
+            int quantity = cursor.getInt(2);
+            double price = cursor.getDouble(3);
+            String section =cursor.getString(4);
+            byte[] image =cursor.getBlob(5);
+
+            Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
+            Drawable drawable = new BitmapDrawable(context.getResources(), bitmap);
+            p = new Product(name , drawable,price,quantity,section);
+
+
+        }
+
+        return p;
+    }
+
+    public Product getProductByType(String inputType){
+        SQLiteDatabase database = getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM " + tableProduct + " WHERE  TRIM(section) = '"+inputType.trim()+"'" ,null);
+
+
+        while (cursor.moveToNext()){
+            String name = cursor.getString(1);
+            int quantity = cursor.getInt(2);
+            double price = cursor.getDouble(3);
+            String section =cursor.getString(4);
+            byte[] image =cursor.getBlob(5);
+
+            Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
+            Drawable drawable = new BitmapDrawable(context.getResources(), bitmap);
+            p = new Product(name , drawable,price,quantity,section);
+
+        }
+
+        return p;
+    }
+
+    public void addProductToCart (Product product){
+        Database database = new Database(context);
+
+        SQLiteDatabase data = database.getWritableDatabase();
+
+        //convert from drawable to bitmap to byte
+        BitmapDrawable bitmapDrawable = (BitmapDrawable) product.getImg();
+        Bitmap bitmap = bitmapDrawable.getBitmap();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 80, stream);
+        byte[] byteArray = stream.toByteArray();
+
+
+        ContentValues values = new ContentValues();
+        values.put("name",product.getName());
+        values.put("quantity",product.getQuantity());
+        values.put("price", product.getPrice());
+        values.put("section" , product.getSection());
+        values.put("image",byteArray);
+
+
+        long rowId = data.insert(tableCartProduct, null, values);
+
+        if(rowId == -1){
+            Toast.makeText(context, "Filed to add product to cart", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(context, "Success to add product to cart", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public ArrayList<Product> getAllCartProduct(){
+        SQLiteDatabase database = getReadableDatabase();
+        Cursor cursor = database.rawQuery("select * from "+ tableCartProduct,null);
+        ArrayList<Product> products = new ArrayList<>();
+        while (cursor.moveToNext()){
+            String name = cursor.getString(1);
+            int quantity = cursor.getInt(2);
+            double price = cursor.getDouble(3);
+            String section =cursor.getString(4);
+            byte[] image =cursor.getBlob(5);
+
+            Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
+            Drawable drawable = new BitmapDrawable(context.getResources(), bitmap);
+
+            Product p = new Product(name , drawable,price,quantity,section);
+            products.add(p);
+
+
+        }
+        return products;
+    }
 
     public void addUser(String name ,String password , String type ){
         SQLiteDatabase database = getWritableDatabase();
@@ -203,4 +319,5 @@ public class Database extends SQLiteOpenHelper {
         }
 
     }
+
 }
