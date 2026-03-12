@@ -45,31 +45,30 @@ public class cart extends AppCompatActivity {
         binding.RecyclerViewCart.setAdapter(adapter);
         binding.RecyclerViewCart.setLayoutManager(manager);
 
-        /* add the bottom navigation after make all classes */
-//
-//        binding.IvProfileCart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(cart.this, profile.class);
-//                startActivity(i);
-//                finish();
-//            }
-//        });
-//        binding.IvHomeCart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(cart.this, home.class);
-//                startActivity(i);
-//                finish();
-//            }
-//        });
-//        binding.BtnCheckOut.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(cart.this, check_out.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
+
+        binding.IvProfileCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(cart.this, profile.class);
+                startActivity(i);
+                finish();
+            }
+        });
+        binding.IvHomeCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(cart.this, home.class);
+                startActivity(i);
+                finish();
+            }
+        });
+        binding.BtnCheckOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(cart.this, check_out.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

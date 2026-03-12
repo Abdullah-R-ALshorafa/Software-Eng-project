@@ -49,34 +49,33 @@ public class home extends AppCompatActivity {
         binding.RecyclerView.setAdapter(adapterRv);
         binding.RecyclerView.setLayoutManager(manager);
 
-        /* add the bottom navigation after make all classes */
 
-//        binding.IvProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(home.this, profile.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
-//
-//        binding.IvCart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(home.this, cart.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
-//
-//        binding.IvCartHome.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(home.this, cart.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
+        binding.IvProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this, profile.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        binding.IvCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this, cart.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        binding.IvCartHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home.this, cart.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         binding.IcSearch.setOnClickListener(new View.OnClickListener() {
             @Override

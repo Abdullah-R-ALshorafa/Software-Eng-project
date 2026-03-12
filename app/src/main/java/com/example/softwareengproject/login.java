@@ -111,10 +111,9 @@ public class login extends AppCompatActivity {
                     SharedPreferences.Editor editor = prefs.edit();
                     editor.putString("username", nameData);
                     editor.apply();
-                    /* move to home after making the file */
-//                    Intent intent = new Intent(login.this, home.class);
-//                    startActivity(intent);
-//                    finish();
+                    Intent intent = new Intent(login.this, home.class);
+                    startActivity(intent);
+                    finish();
 
                 }
             }
