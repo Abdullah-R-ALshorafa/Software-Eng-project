@@ -13,6 +13,12 @@
         android:theme="@style/Theme.SoftwareEngProject">
         <activity
             android:name=".MainActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".sign_up"
+            android:exported="false" />
+        <activity
+            android:name=".sign_in_sign_up"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +26,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
+            android:name=".home"
+            android:exported="false" />
+        <activity
+            android:name=".check_out"
+            android:exported="false" />
+        <activity
+            android:name=".cart"
+            android:exported="false" />
+        <activity
+            android:name=".profile"
+            android:exported="false" />
+
+
     </application>
 
 </manifest>
