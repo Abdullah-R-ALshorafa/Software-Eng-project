@@ -5,171 +5,86 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home">
+    tools:context=".add_product">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
+        android:id="@+id/Iv_product"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/strok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Tv_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add your product\n image here"
+        android:textColor="#888"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/Iv_product"
+        app:layout_constraintEnd_toEndOf="@id/Iv_product"
+        app:layout_constraintStart_toStartOf="@id/Iv_product"
+        app:layout_constraintTop_toTopOf="@id/Iv_product" />
+
+    <ImageView
+        android:id="@+id/Iv_addProduct"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/add_ic"
+        app:layout_constraintBottom_toBottomOf="@id/Iv_product"
+        app:layout_constraintEnd_toEndOf="@id/Iv_product" />
+
+    <EditText
+        android:id="@+id/Et_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Home">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:hint="Enter product name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Iv_product" />
 
-        <EditText
-            android:id="@+id/Et_search"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/strok"
-            android:hint="Enter product name ? click here"
-            android:paddingStart="10dp"
-            android:paddingEnd="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/Et_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:hint="Enter product quantity"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@id/Et_name"
+        app:layout_constraintStart_toStartOf="@id/Et_name"
+        app:layout_constraintTop_toBottomOf="@id/Et_name" />
 
-        <ImageView
-            android:id="@+id/Ic_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/ic_search"
-            app:layout_constraintBottom_toBottomOf="@id/Et_search"
-            app:layout_constraintEnd_toEndOf="@id/Et_search"
-            app:layout_constraintTop_toTopOf="@id/Et_search" />
+    <EditText
+        android:id="@+id/Et_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:hint="Enter product price"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@id/Et_quantity"
+        app:layout_constraintStart_toStartOf="@id/Et_quantity"
+        app:layout_constraintTop_toBottomOf="@id/Et_quantity" />
 
-        <ImageView
-            android:id="@+id/Iv_cartHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:src="@drawable/baseline_shopping_cart_24"
-            app:layout_constraintBottom_toBottomOf="@id/Et_search"
-            app:layout_constraintEnd_toStartOf="@id/Et_search"
-            app:layout_constraintTop_toTopOf="@id/Et_search" />
+    <Spinner
+        android:id="@+id/Spinner_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        app:layout_constraintStart_toStartOf="@id/Et_price"
+        app:layout_constraintTop_toBottomOf="@id/Et_price" />
 
-        <LinearLayout
-            android:id="@+id/Linear_section"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="@id/Iv_cartHome"
-            app:layout_constraintTop_toBottomOf="@id/Iv_cartHome">
+    <Button
+        android:id="@+id/Btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#03A9F4"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Spinner_item" />
 
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/Tv_all"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_marginStart="30dp"
-                        android:background="@drawable/selector"
-                        android:gravity="center"
-                        android:text="All" />
-
-                    <TextView
-                        android:id="@+id/Tv_drinks"
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_marginStart="15dp"
-                        android:background="@drawable/strok"
-                        android:gravity="center"
-                        android:paddingHorizontal="20dp"
-                        android:text="Drinks" />
-
-                    <TextView
-                        android:id="@+id/Tv_food"
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_marginStart="15dp"
-                        android:background="@drawable/strok"
-                        android:gravity="center"
-                        android:paddingHorizontal="20dp"
-                        android:text="Food" />
-
-                    <TextView
-                        android:id="@+id/Tv_tools"
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_marginStart="15dp"
-                        android:background="@drawable/strok"
-                        android:gravity="center"
-                        android:paddingHorizontal="20dp"
-                        android:text="tools" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_marginStart="15dp"
-                        android:background="@drawable/strok"
-                        android:gravity="center"
-                        android:paddingHorizontal="20dp"
-                        android:text="For Scroll" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_marginStart="15dp"
-                        android:background="@drawable/strok"
-                        android:gravity="center"
-                        android:paddingHorizontal="20dp"
-                        android:text="For Scroll" />
-                </LinearLayout>
-            </HorizontalScrollView>
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/RecyclerView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="30dp"
-            app:layout_constraintBottom_toTopOf="@+id/Linear_home"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Linear_section" />
-
-        <LinearLayout
-            android:id="@+id/Linear_home"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="#03A9F4"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <ImageView
-                android:id="@+id/Iv_home"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="50dp"
-                android:background="@drawable/radus"
-                android:backgroundTint="#9E9E9E"
-                android:src="@drawable/baseline_home_24" />
-
-            <ImageView
-                android:id="@+id/Iv_cart"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="100dp"
-                android:src="@drawable/white_cart" />
-
-            <ImageView
-                android:id="@+id/Iv_profile"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="100dp"
-                android:src="@drawable/white_person" />
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
