@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.softwareengproject.Model.Product;
 import com.example.softwareengproject.R;
+import com.example.softwareengproject.product_detals;
 
 import java.util.ArrayList;
 
@@ -60,9 +61,9 @@ public class Adapter_rv extends RecyclerView.Adapter <Adapter_rv.MyHolder> {
             @Override
             public void onClick(View v) {
                 /* connect the activity with class after making the class */
-//                Intent intent = new Intent(v.getContext(), product_detals.class);
-//                intent.putExtra("name", holder.name.getText().toString().trim());
-//                v.getContext().startActivity(intent);
+                Intent intent = new Intent(v.getContext(), product_detals.class);
+                intent.putExtra("name", holder.name.getText().toString().trim());
+                v.getContext().startActivity(intent);
 
 
             }
