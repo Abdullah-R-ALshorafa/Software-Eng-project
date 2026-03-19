@@ -67,72 +67,69 @@ public class profile extends AppCompatActivity {
         }
 
 
-        /* add the bottom navigation after make all classes */
-//        binding.LinearAddProduct.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(profile.this, add_product.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        binding.LinearEditproduct.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(profile.this, edit_product.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        binding.LinearEditUser.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(profile.this, edit_user.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
-//
-//        binding.IvCartProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Intent intent = new Intent(profile.this, cart.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
-//
-//        binding.IvHomeProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(profile.this, home.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
+        binding.LinearAddProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(profile.this, add_product.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.LinearEditproduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(profile.this, edit_product.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.LinearEditUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(profile.this, edit_user.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        binding.IvCartProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(profile.this, cart.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        binding.IvHomeProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(profile.this, home.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }
 
 
-    /*
-    @Override
-    public void onCreateContextMenu(android.view.ContextMenu menu, View v, android.view.ContextMenu.ContextMenuInfo menuInfo) {
-        android.view.MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.custem_menu, menu);
-        super.onCreateContextMenu(menu, v, menuInfo);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@androidx.annotation.NonNull android.view.MenuItem item) {
-        if (item.getItemId() == R.id.Iv_logout) {
-            Intent intent = new Intent(this, Sign_in_Sign_up.class); // تأكد من الاسم
-            startActivity(intent);
-            return true;
-        }
-        if(item.getItemId() == R.id.Edit_profile){
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-
-     */
+//    @Override
+//    public void onCreateContextMenu(android.view.ContextMenu menu, View v, android.view.ContextMenu.ContextMenuInfo menuInfo) {
+//        android.view.MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.custem_menu, menu);
+//        super.onCreateContextMenu(menu, v, menuInfo);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(@androidx.annotation.NonNull android.view.MenuItem item) {
+//        if (item.getItemId() == R.id.Iv_logout) {
+//            Intent intent = new Intent(this, Sign_in_Sign_up.class); // تأكد من الاسم
+//            startActivity(intent);
+//            return true;
+//        }
+//        if(item.getItemId() == R.id.Edit_profile){
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);

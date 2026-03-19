@@ -44,6 +44,15 @@
         <activity
             android:name=".profile"
             android:exported="false" />
+        <activity
+            android:name=".add_product"
+            android:exported="false" />
+        <activity
+            android:name=".edit_product"
+            android:exported="false" />
+        <activity
+            android:name=".edit_user"
+            android:exported="false" />
     </application>
 
 </manifest>
